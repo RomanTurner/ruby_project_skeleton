@@ -1,12 +1,25 @@
 # Skeleton Structure
-
-+-- bin
-|   +-- run
-+-- config
-|   +-- environment.rb
-+-- Lib
-|
-+-- Spec
+```bash
+├── bin
+│   ├── run
+│
+├── config
+│   ├── environment.rb
+│
+├── lib
+│   ├── app.rb
+│ 
+├── spec
+│   ├── spec_helper.rb
+│   ├── app_spec.rb
+│ 
+├── README.md
+├── Rakefile
+├── Gemfile
+├── Gemfile.lock
+├── .rspec
+└── .gitignore
+```
 
 ## Commands 
 
