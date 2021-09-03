@@ -16,19 +16,21 @@ class Project < Thor
     file = "lib/#{name}.rb"
     FileUtils.touch file
     File.write(file, model_template(name))
-    g_test(name)
+    generate_test(name)
     say("......#{file} 🏗  created", :green)
   end
 
-  desc "g_test [NAME]", "create a [NAME]_spec file"
+  map "g" => "generate"
+  desc "generate_test [NAME]", "create a [NAME]_spec file"
 
-  def g_test(name)
+  def generate_test(name)
     file = "spec/#{name}_spec.rb"
     FileUtils.touch file
     File.write(file, test_template(name))
     say("......#{file} 🏗  created", :green)
   end
 
+  map "g_test" => "generate_test", "g test" => "generate_test"
   desc "destroy [NAME]", "destroy a class and test file"
 
   def destroy(name)
@@ -37,4 +39,5 @@ class Project < Thor
       say("......#{file} 💥 destroyed.", :red)
     end
   end
+  map "d" => "destroy"
 end
