@@ -29,48 +29,48 @@
 
 ## Commands
 
-**Thor**
+_thor suffix[optional argument]_
 
-The base command is
-_thor project:_
-To change this change the name of the thor class in the setup.thor file.
+| Thor prefix |           suffix            |  alias | Describe                                                          |
+| -----------: | :------------------------- | -----: | :---------------------------------------------------------------- |
+| thor        |   project:generate[NAME]    |      g | # Generates a Ruby object and test file [NAME]                    |
+| thor        |    project:destroy[NAME]    |      d | # Destroys Ruby object and test file available [NAME]             |
+| thor        | project:generate_test[NAME] | g_test | # Generates a Rspec test file [NAME]                              |
+| thor        |       help [COMMAND]        |    n/a | # Describe available commands or one specific command             |
+| thor        |        install NAME         |    n/a | # Install an optionally named Thor file into your system commands |
+| thor        |          installed          |    n/a | # List the installed Thor modules and commands                    |
+| thor        |        list [SEARCH]        |    n/a | # List the available thor commands (--substring means .\*SEARCH)  |
+| thor        |       uninstall NAME        |    n/a | # Uninstall a named Thor module                                   |
+| thor        |         update NAME         |    n/a | # Update a Thor file from its original location                   |
+| thor        |           version           |    n/a | # Show Thor version                                               |
 
--thor project:generate [NAME]-
-alias _thor project:g [NAME]_
-generate[NAME] will create ruby class file of name in lib/name.rb **&** will create ruby test file of name in spec/name_spec.rb.
+_additional command line tools_
 
--thor project:destroy [NAME]-
-alias _thor project:d [NAME]_
-destroy[NAME] will destroy ruby class file of name in lib/name.rb **&** will destroy ruby test file of name in spec/name_spec.rb.
-
-**Rake**
-
-rake -T _shows all rake tasks_
-
-rake console _start a Pry session_
-
-ruby bin/run _runs the program_
-
-bundle exec rspec _runs test suite_
+| prefix |   suffix   | Describe                     |
+| ------: | :-------- | :--------------------------- |
+| rake   |     -T     | # displays all rake commands |
+| rake   |  console   | # Starts a Pry session       |
+| ruby   |  bin/run   | # Runs the program           |
+| bundle | exec rspec | # runs entire test suite     |
 
 ## Details
 
 **Bin**
 
-Sets the Environment
+- Sets the Environment
 
 - the #!/usr/bin/env ruby
 
-Requires and runs the config / environment
+- Requires and runs the config / environment
 
 **Config**
 
-The environment.rb file is where we require all of our files to tie it all together.
+- The environment.rb file is where we require all of our files to tie it all together.
 
 **Lib**
 
-Contains all classes
+- Contains all classes
 
 **Spec**
 
-RSpec
+- RSpec
