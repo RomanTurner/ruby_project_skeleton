@@ -32,7 +32,7 @@
 _thor suffix[optional argument]_
 
 | Thor prefix |           suffix            |  alias | Describe                                                          |
-| -----------: | :------------------------- | -----: | :---------------------------------------------------------------- |
+| -----------:| :-------------------------- | -----: | :---------------------------------------------------------------- |
 | thor        |   project:generate[NAME]    |      g | # Generates a Ruby object and test file [NAME]                    |
 | thor        |    project:destroy[NAME]    |      d | # Destroys Ruby object and test file available [NAME]             |
 | thor        | project:generate_test[NAME] | g_test | # Generates a Rspec test file [NAME]                              |
@@ -47,7 +47,7 @@ _thor suffix[optional argument]_
 _additional command line tools_
 
 | prefix |   suffix   | Describe                     |
-| ------: | :-------- | :--------------------------- |
+| ------:| :--------  | :--------------------------- |
 | rake   |     -T     | # displays all rake commands |
 | rake   |  console   | # Starts a Pry session       |
 | ruby   |  bin/run   | # Runs the program           |
