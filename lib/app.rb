@@ -1,9 +1,5 @@
 class App
-
-def initialize
-end
-
-def call
-end
-
+  def say_hello
+    "hello"
+  end
 end
