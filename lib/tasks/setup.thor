@@ -1,14 +1,19 @@
 require "fileutils"
 require "lucky_case"
+require "erb"
 
 class Project < Thor
+no_tasks do
   def test_template(name)
-    "require'#{name}'\n describe #{LuckyCase.pascal_case(name)} do\n  end\nend"
+    model = File.read(File.expand_path("./lib/templates/test.erb"))
+    ERB.new(model, 0, nil, name).result(binding)
   end
 
   def model_template(name)
-    "class #{LuckyCase.pascal_case(name)} \nend"
+     model = File.read(File.expand_path("./lib/templates/model.erb"))
+     ERB.new(model, 0, nil, name).result(binding)
   end
+end
 
   desc "generate [NAME]", "create a class and test file"
 
@@ -30,7 +35,7 @@ class Project < Thor
     say("......#{file} 🏗  created", :green)
   end
 
-  map "g_test" => "generate_test", "g test" => "generate_test"
+  map "g_test" => "generate_test"
   desc "destroy [NAME]", "destroy a class and test file"
 
   def destroy(name)
@@ -39,5 +44,6 @@ class Project < Thor
       say("......#{file} 💥 destroyed.", :red)
     end
   end
+
   map "d" => "destroy"
 end
