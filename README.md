@@ -9,6 +9,11 @@
 │
 ├── lib
 │   ├── app.rb
+│   ├── templates
+│        ├── model.erb
+│        ├── test.erb
+│   ├── tasks
+│        ├── setup.thor
 │
 ├── spec
 │   ├── spec_helper.rb
